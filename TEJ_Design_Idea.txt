@@ -1,0 +1,40 @@
+design of TEJ analyzer can be defined as library header, data extractor, parser, calculator, and stacker.
+library header just need know dependency of sub-rutine. it's can be kepp in each function, but need mind
+about name-crash.
+data extractor and stacker is stable and repeatable, wchich just need be take onece.
+calculator is core of script. can repeat by good parser because it's more target-drived.
+
+################
+#Data Extractor#
+################
+
+#########
+#Stacker#
+#########
+
+########
+#parser#
+########
+
+##relation parser##
+#format of source data
+ ID.name  |  relation
+ Jack     |  Alice(brother-sister), Josa(brother-brother), Eddy(Son-Dad)
+ Alice    |  Jack(brother-sister), Josa(brother-brother), Eddy(Daughter-dad)
+#parse format
+  ID.name1  |  ID.name2   |  relation
+  Jack      |  Alice      | Brother-Sister
+  Jack      |  Josa       | Brother-Brother
+  Jack      |  Eddy       | Son-Dad
+  Alice     |  Jack       | Brother-Sister
+  Alice     |  Josa       | Brother-Brother
+  Alice     |  Eddy       | Daughter-dad
+  
+  
+
+
+
+############
+#calculator#
+############
+
